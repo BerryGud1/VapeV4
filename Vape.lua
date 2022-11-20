@@ -193,9 +193,9 @@ local World = GuiLibrary.CreateWindow({
 	["Icon"] = "vape/assets/WorldIcon.png", 
 	["IconSize"] = 16
 })
-local ZeroDays = GuiLibrary.CreateWindow({
+local ZeroDay = GuiLibrary.CreateWindow({
 	["Name"] = "ZeroDay", 
-	["Icon"] = "vape/assets/TargetIcon.png", 
+	["Icon"] = "vape/assets/BackIcon.png", 
 	["IconSize"] = 16
 })
 local Friends = GuiLibrary.CreateWindow2({
@@ -241,8 +241,8 @@ GUI.CreateButton({
 })
 GUI.CreateButton({
 	["Name"] = "ZeroDay", 
-	["Function"] = function(callback) ZeroDays.SetVisible(callback) end, 
-	["Icon"] = "vape/assets/TargetIcon.png", 
+	["Function"] = function(callback) ZeroDay.SetVisible(callback) end, 
+	["Icon"] = "vape/assets/WorldIcon.png", 
 	["IconSize"] = 16
 })
 GUI.CreateDivider("MISC")
@@ -1460,7 +1460,7 @@ local tabsortorder = {
 	["RenderButton"] = 3,
 	["UtilityButton"] = 4,
 	["WorldButton"] = 5,
-	["ZeroDaysButton"] = 6,
+	["ZeroDayButton"] = 6,
 	["FriendsButton"] = 7,
 	["ProfilesButton"] = 8
 }
@@ -1787,12 +1787,12 @@ GUISettings.CreateButton2({
 			["RenderWindow"] = 4,
 			["UtilityWindow"] = 5,
 			["WorldWindow"] = 6,
-			["ZeroDaysWindow"] = 6,
-			["FriendsWindow"] = 7,
-			["ProfilesWindow"] = 8,
-			["Text GUICustomWindow"] = 9,
-			["TargetInfoCustomWindow"] = 10,
-			["RadarCustomWindow"] = 11,
+			["ZeroDayWindow"] = 7,
+			["FriendsWindow"] = 8,
+			["ProfilesWindow"] = 9,
+			["Text GUICustomWindow"] = 10,
+			["TargetInfoCustomWindow"] = 11,
+			["RadarCustomWindow"] = 12,
 		}
 		local storedpos = {}
 		local num = 6
