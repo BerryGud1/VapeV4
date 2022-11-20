@@ -239,6 +239,12 @@ GUI.CreateButton({
 	["Icon"] = "vape/assets/WorldIcon.png", 
 	["IconSize"] = 16
 })
+GUI.CreateButton({
+	["Name"] = "ZeroDay", 
+	["Function"] = function(callback) ZeroDays.SetVisible(callback) end, 
+	["Icon"] = "vape/assets/TargetIcon.png", 
+	["IconSize"] = 16
+})
 GUI.CreateDivider("MISC")
 GUI.CreateButton({
 	["Name"] = "Friends", 
@@ -1454,8 +1460,9 @@ local tabsortorder = {
 	["RenderButton"] = 3,
 	["UtilityButton"] = 4,
 	["WorldButton"] = 5,
-	["FriendsButton"] = 6,
-	["ProfilesButton"] = 7
+	["ZeroDaysButton"] = 6,
+	["FriendsButton"] = 7,
+	["ProfilesButton"] = 8
 }
 
 local tabsortorder2 = {
@@ -1463,7 +1470,8 @@ local tabsortorder2 = {
 	[2] = "Blatant",
 	[3] = "Render",
 	[4] = "Utility",
-	[5] = "World"
+	[5] = "World",
+	[6] = "ZeroDay"
 }
 
 local function getSaturation(val)
@@ -1779,6 +1787,7 @@ GUISettings.CreateButton2({
 			["RenderWindow"] = 4,
 			["UtilityWindow"] = 5,
 			["WorldWindow"] = 6,
+			["ZeroDaysWindow"] = 6,
 			["FriendsWindow"] = 7,
 			["ProfilesWindow"] = 8,
 			["Text GUICustomWindow"] = 9,
