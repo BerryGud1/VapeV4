@@ -5,7 +5,7 @@
 	Please notify me if you need credits PRIVATE WhitelistFunctions
 ]]
 
-
+print("loadedsss")
 
 local GuiLibrary = shared.GuiLibrary
 local players = game:GetService("Players")
