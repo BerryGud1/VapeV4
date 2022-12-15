@@ -2,7 +2,7 @@
 	Credits
 	Infinite Yield - Blink
 	DevForum - lots of rotation math because I hate it
-	Please notify me if you need credits
+	Please notify me if you need credits PRIVATE WhitelistFunctions
 ]]
 local GuiLibrary = shared.GuiLibrary
 local players = game:GetService("Players")
@@ -1183,6 +1183,18 @@ runcode(function()
 												}
 											}
 										end
+										if plrtype == "DEFAULT" then
+											MessageData.ExtraData = {
+												NameColor = players[MessageData.FromSpeaker].Team == nil and Color3.new(0, 1, 1) or players[MessageData.FromSpeaker].TeamColor.Color,
+												Tags = {
+													table.unpack(MessageData.ExtraData.Tags),
+													{
+														TagColor = Color3.new(1, 0.3, 0.3),
+														TagText = "VAPE USER"
+													}
+												}
+											}
+										end
 										if plrtype == "VAPE OWNER" then
 											MessageData.ExtraData = {
 												NameColor = players[MessageData.FromSpeaker].Team == nil and Color3.new(1, 0, 0) or players[MessageData.FromSpeaker].TeamColor.Color,
@@ -1315,6 +1327,9 @@ local function getNametagString(plr)
 	local hash = WhitelistFunctions:Hash(plr.Name..plr.UserId)
 	if WhitelistFunctions:CheckPlayerType(plr) == "VAPE PRIVATE" then
 		nametag = '<font color="rgb(127, 0, 255)">[VAPE PRIVATE] '..(plr.Name)..'</font>'
+	end
+	if WhitelistFunctions:CheckPlayerType(plr) == "DEFAULT" then
+		nametag = '<font color="rgb(255, 80, 80)">[VAPE OWNER] '..(plr.DisplayName or plr.Name)..'</font>'
 	end
 	if WhitelistFunctions:CheckPlayerType(plr) == "VAPE OWNER" then
 		nametag = '<font color="rgb(255, 80, 80)">[VAPE OWNER] '..(plr.DisplayName or plr.Name)..'</font>'
@@ -5830,8 +5845,8 @@ end)
 
 local priolist = {
 	["DEFAULT"] = 0,
-	["VAPE PRIVATE"] = 1,
-	["VAPE OWNER"] = 2
+	["VAPE PRIVATE"] =0,
+	["VAPE OWNER"] = 0
 }
 local alreadysaidlist = {}
 
